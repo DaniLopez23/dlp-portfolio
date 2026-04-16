@@ -1,6 +1,6 @@
 import { ExternalLink, FolderGit2, PlayCircle } from "lucide-react";
 
-import { Button, buttonVariants } from "@/components/ui/button";
+import { buttonVariants } from "@/components/ui/button";
 import {
   Card,
   CardContent,
@@ -51,7 +51,9 @@ export default function Home() {
             generated from Quarto files.
           </p>
           <div className="mt-6 flex flex-wrap gap-3">
-            <Button>Contact Me</Button>
+            <a className={buttonVariants()} href="mailto:your.email@example.com">
+              Contact Me
+            </a>
             <a
               className={buttonVariants({ variant: "outline" })}
               href="#projects"
