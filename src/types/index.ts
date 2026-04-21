@@ -1,10 +1,12 @@
+export type Locale = "es" | "en"
+
 export interface Project {
   slug: string
   title: string
   excerpt: string
   description: string
   stack: string[]
-  category: string
+  category: "sports-analytics" | "other"
   year: string
   githubUrl: string
   demoUrl: string

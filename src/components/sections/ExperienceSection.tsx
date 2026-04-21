@@ -1,3 +1,6 @@
+"use client"
+
+import { useLanguage } from "@/i18n/LanguageContext"
 import { Experience } from "@/types"
 import { SectionWrapper } from "@/components/shared/SectionWrapper"
 
@@ -39,11 +42,13 @@ interface ExperienceSectionProps {
 }
 
 export function ExperienceSection({ className }: ExperienceSectionProps) {
+  const { t } = useLanguage()
+
   return (
     <SectionWrapper
       id="experience"
-      title="Professional Experience"
-      subtitle="A timeline of roles and responsibilities across product and engineering teams."
+      title={t.experience.title}
+      subtitle={t.experience.subtitle}
       className={className}
     >
       <div className="relative space-y-10 before:absolute before:top-2 before:left-3 before:h-[calc(100%-1rem)] before:w-px before:bg-border">

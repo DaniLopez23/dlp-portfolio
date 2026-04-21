@@ -3,6 +3,7 @@
 import { MoonIcon, SunIcon } from "lucide-react"
 import { useTheme } from "next-themes"
 
+import { useLanguage } from "@/i18n/LanguageContext"
 import { Button } from "@/components/ui/button"
 
 interface ThemeToggleProps {
@@ -10,6 +11,7 @@ interface ThemeToggleProps {
 }
 
 export function ThemeToggle({ className }: ThemeToggleProps) {
+  const { t } = useLanguage()
   const { resolvedTheme, setTheme } = useTheme()
   const isDark = resolvedTheme === "dark"
 
@@ -19,7 +21,7 @@ export function ThemeToggle({ className }: ThemeToggleProps) {
       variant="ghost"
       size="icon"
       className={className}
-      aria-label="Toggle color theme"
+      aria-label={t.theme.toggle}
       onClick={() => setTheme(isDark ? "light" : "dark")}
     >
       {isDark ? <SunIcon /> : <MoonIcon />}

@@ -1,3 +1,6 @@
+"use client"
+
+import { useLanguage } from "@/i18n/LanguageContext"
 import { Avatar, AvatarFallback } from "@/components/ui/avatar"
 import { Badge } from "@/components/ui/badge"
 import { SectionWrapper } from "@/components/shared/SectionWrapper"
@@ -16,11 +19,13 @@ interface AboutSectionProps {
 }
 
 export function AboutSection({ className }: AboutSectionProps) {
+  const { t } = useLanguage()
+
   return (
     <SectionWrapper
       id="about"
-      title="About Me"
-      subtitle="Profile overview with a strong focus on product thinking and clean UI engineering."
+      title={t.about.title}
+      subtitle={t.about.subtitle}
       className={className}
     >
       <div className="grid items-start gap-10 md:grid-cols-[280px_1fr]">
@@ -31,16 +36,10 @@ export function AboutSection({ className }: AboutSectionProps) {
         </div>
         <div className="space-y-6">
           <p className="text-sm leading-7 text-muted-foreground sm:text-base">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean et
-            ipsum vel nulla porta sagittis. Donec posuere, nibh in egestas
-            vehicula, libero felis facilisis augue, non faucibus libero magna
-            ut est.
+            {t.about.bio}
           </p>
           <p className="text-sm leading-7 text-muted-foreground sm:text-base">
-            Curabitur gravida nibh in dolor rhoncus, vel vestibulum turpis
-            iaculis. Vestibulum ante ipsum primis in faucibus orci luctus et
-            ultrices posuere cubilia curae; Donec congue lorem et lacus tempus,
-            et egestas nibh bibendum.
+            {t.about.bio_secondary}
           </p>
           <div className="flex flex-wrap gap-2">
             {skills.map((skill) => (

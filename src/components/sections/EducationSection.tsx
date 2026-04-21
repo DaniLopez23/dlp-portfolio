@@ -1,3 +1,6 @@
+"use client"
+
+import { useLanguage } from "@/i18n/LanguageContext"
 import { Education } from "@/types"
 import { SectionWrapper } from "@/components/shared/SectionWrapper"
 import {
@@ -30,11 +33,13 @@ interface EducationSectionProps {
 }
 
 export function EducationSection({ className }: EducationSectionProps) {
+  const { t } = useLanguage()
+
   return (
     <SectionWrapper
       id="education"
-      title="Academic Background"
-      subtitle="Programs and studies that shaped the technical and design foundation."
+      title={t.education.title}
+      subtitle={t.education.subtitle}
       className={className}
     >
       <div className="grid gap-6 md:grid-cols-2">

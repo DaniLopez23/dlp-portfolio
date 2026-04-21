@@ -1,5 +1,8 @@
+"use client"
+
 import Link from "next/link"
 
+import { useLanguage } from "@/i18n/LanguageContext"
 import { Button } from "@/components/ui/button"
 
 interface HeroSectionProps {
@@ -7,6 +10,8 @@ interface HeroSectionProps {
 }
 
 export function HeroSection({ className }: HeroSectionProps) {
+  const { t } = useLanguage()
+
   return (
     <section
       id="hero"
@@ -24,21 +29,20 @@ export function HeroSection({ className }: HeroSectionProps) {
 
       <div className="relative mx-auto flex w-full max-w-6xl flex-col gap-6 animate-rise-up">
         <p className="inline-flex w-fit rounded-full border border-border/80 bg-card/60 px-3 py-1 text-xs font-medium tracking-wide text-muted-foreground uppercase backdrop-blur-sm">
-          Personal Portfolio
+          {t.hero.badge}
         </p>
         <h1 className="max-w-4xl font-heading text-5xl leading-tight font-semibold tracking-tight text-foreground sm:text-6xl lg:text-7xl">
           Daniel Lopez Perez
         </h1>
         <p className="max-w-2xl text-base leading-7 text-muted-foreground sm:text-lg">
-          Frontend-focused developer building data-rich, accessible and polished
-          digital experiences for sports and performance products.
+          {t.hero.tagline}
         </p>
         <div className="flex flex-col gap-3 pt-2 sm:flex-row">
           <Button asChild size="lg">
-            <Link href="/#projects">View Projects</Link>
+            <Link href="/#projects">{t.hero.cta_projects}</Link>
           </Button>
           <Button asChild size="lg" variant="outline">
-            <Link href="#">Download CV</Link>
+            <Link href="#">{t.hero.cta_cv}</Link>
           </Button>
         </div>
       </div>

@@ -15,9 +15,10 @@ import {
 
 interface ProjectCardProps {
   project: Project
+  seeMoreLabel: string
 }
 
-export function ProjectCard({ project }: ProjectCardProps) {
+export function ProjectCard({ project, seeMoreLabel }: ProjectCardProps) {
   return (
     <Card className="h-full overflow-hidden border border-border/80 bg-card/90 backdrop-blur-sm">
       <div className="relative flex h-44 items-center justify-center border-b border-border/80 bg-gradient-to-br from-primary/15 via-accent/20 to-secondary/40">
@@ -38,7 +39,7 @@ export function ProjectCard({ project }: ProjectCardProps) {
       </CardContent>
       <CardFooter className="justify-end">
         <Button asChild>
-          <Link href={`/projects/${project.slug}`}>Ver mas</Link>
+          <Link href={`/projects/${project.slug}`}>{seeMoreLabel}</Link>
         </Button>
       </CardFooter>
     </Card>

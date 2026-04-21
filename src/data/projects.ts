@@ -9,7 +9,7 @@ export const projects: Project[] = [
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis bibendum neque ut urna commodo, et gravida risus vestibulum. Curabitur sit amet nibh ac velit faucibus faucibus. Quisque luctus, sem in vulputate aliquet, libero augue varius urna, vitae volutpat lorem sem nec velit. Etiam feugiat pellentesque nisl, vitae auctor mi commodo sed.",
     stack: ["Next.js", "TypeScript", "Tailwind", "Recharts"],
-    category: "Data Visualization",
+    category: "sports-analytics",
     year: "2025",
     githubUrl: "#",
     demoUrl: "#",
@@ -22,7 +22,7 @@ export const projects: Project[] = [
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent sed libero tincidunt, suscipit leo quis, dictum turpis. Pellentesque luctus pharetra ante, id volutpat mauris feugiat ut. Nunc efficitur lectus ut arcu porttitor, vitae malesuada urna consequat.",
     stack: ["Next.js", "Prisma", "PostgreSQL", "shadcn/ui"],
-    category: "Recruitment",
+    category: "sports-analytics",
     year: "2024",
     githubUrl: "#",
     demoUrl: "#",
@@ -35,7 +35,7 @@ export const projects: Project[] = [
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In viverra, libero vel pellentesque varius, arcu turpis pellentesque libero, nec finibus leo nibh id nibh. Aliquam consequat, lacus vitae convallis iaculis, risus lectus malesuada justo, at facilisis sem turpis in lectus.",
     stack: ["React", "TypeScript", "TanStack Query", "Chart.js"],
-    category: "Performance",
+    category: "sports-analytics",
     year: "2026",
     githubUrl: "#",
     demoUrl: "#",
@@ -48,7 +48,7 @@ export const projects: Project[] = [
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vehicula sem sed tincidunt auctor. Donec luctus, mauris non feugiat consequat, neque metus blandit ligula, at laoreet est lacus et velit. Morbi placerat volutpat lorem vel tincidunt.",
     stack: ["Next.js", "Supabase", "Tailwind", "Framer Motion"],
-    category: "Community",
+    category: "other",
     year: "2023",
     githubUrl: "#",
     demoUrl: "#",
@@ -61,7 +61,7 @@ export const projects: Project[] = [
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer mollis nibh ac odio hendrerit, at vulputate velit consequat. Integer tincidunt lorem non mi varius, et volutpat lorem sodales. Donec dictum aliquam ex, vel ornare justo venenatis non.",
     stack: ["Next.js", "TypeScript", "Zod", "tRPC"],
-    category: "Operations",
+    category: "other",
     year: "2025",
     githubUrl: "#",
     demoUrl: "#",
@@ -74,7 +74,7 @@ export const projects: Project[] = [
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi fermentum dui vitae vulputate scelerisque. Integer lacinia eros non sapien vulputate, at luctus mi tristique. Phasellus finibus urna non feugiat posuere. In gravida aliquam leo.",
     stack: ["React", "Canvas API", "TypeScript", "Vite"],
-    category: "Tactics",
+    category: "other",
     year: "2026",
     githubUrl: "#",
     demoUrl: "#",

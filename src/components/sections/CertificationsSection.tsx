@@ -1,5 +1,8 @@
+"use client"
+
 import { AwardIcon, FileBadge2Icon, ShieldCheckIcon, TrophyIcon } from "lucide-react"
 
+import { useLanguage } from "@/i18n/LanguageContext"
 import { Certification } from "@/types"
 import { SectionWrapper } from "@/components/shared/SectionWrapper"
 import { Badge } from "@/components/ui/badge"
@@ -50,11 +53,13 @@ interface CertificationsSectionProps {
 }
 
 export function CertificationsSection({ className }: CertificationsSectionProps) {
+  const { t } = useLanguage()
+
   return (
     <SectionWrapper
       id="certifications"
-      title="Certifications"
-      subtitle="Professional credentials with verified status and issuing institutions."
+      title={t.certifications.title}
+      subtitle={t.certifications.subtitle}
       className={className}
     >
       <div className="flex snap-x gap-4 overflow-x-auto pb-2 md:grid md:grid-cols-2 lg:grid-cols-4 md:overflow-visible md:pb-0">
@@ -77,7 +82,11 @@ export function CertificationsSection({ className }: CertificationsSectionProps)
                 <p className="text-xs font-semibold tracking-wide text-primary uppercase">
                   {item.year}
                 </p>
-                {item.verified ? <Badge>Verified</Badge> : <Badge variant="outline">Pending</Badge>}
+                {item.verified ? (
+                  <Badge>{t.certifications.verified}</Badge>
+                ) : (
+                  <Badge variant="outline">{t.certifications.pending}</Badge>
+                )}
               </CardContent>
             </Card>
           )

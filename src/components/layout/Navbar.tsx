@@ -3,6 +3,8 @@
 import Link from "next/link"
 import { MenuIcon } from "lucide-react"
 
+import { useLanguage } from "@/i18n/LanguageContext"
+import { LanguageToggle } from "@/components/shared/LanguageToggle"
 import { ThemeToggle } from "@/components/shared/ThemeToggle"
 import {
   NavigationMenu,
@@ -27,20 +29,21 @@ interface NavItem {
   href: string
 }
 
-const navItems: NavItem[] = [
-  { label: "Hero", href: "/#hero" },
-  { label: "About", href: "/#about" },
-  { label: "Experience", href: "/#experience" },
-  { label: "Education", href: "/#education" },
-  { label: "Certifications", href: "/#certifications" },
-  { label: "Projects", href: "/#projects" },
-]
-
 interface NavbarProps {
   className?: string
 }
 
 export function Navbar({ className }: NavbarProps) {
+  const { t } = useLanguage()
+
+  const navItems: NavItem[] = [
+    { label: t.nav.about, href: "/#about" },
+    { label: t.nav.experience, href: "/#experience" },
+    { label: t.nav.education, href: "/#education" },
+    { label: t.nav.certifications, href: "/#certifications" },
+    { label: t.nav.projects, href: "/#projects" },
+  ]
+
   return (
     <header
       className={[
@@ -54,7 +57,7 @@ export function Navbar({ className }: NavbarProps) {
         <Link
           href="/#hero"
           className="font-heading text-lg font-semibold tracking-tight text-foreground"
-          aria-label="Go to hero section"
+          aria-label={t.nav.brand_aria}
         >
           DLP Portfolio
         </Link>
@@ -72,6 +75,7 @@ export function Navbar({ className }: NavbarProps) {
         </NavigationMenu>
 
         <div className="flex items-center gap-1">
+          <LanguageToggle />
           <ThemeToggle />
           <Sheet>
             <SheetTrigger asChild>
@@ -80,17 +84,15 @@ export function Navbar({ className }: NavbarProps) {
                 variant="ghost"
                 size="icon"
                 className="md:hidden"
-                aria-label="Open navigation menu"
+                aria-label={t.nav.open_menu}
               >
                 <MenuIcon />
               </Button>
             </SheetTrigger>
             <SheetContent side="right" className="w-[85%] max-w-sm">
               <SheetHeader>
-                <SheetTitle>Navigation</SheetTitle>
-                <SheetDescription>
-                  Jump to any section of the portfolio.
-                </SheetDescription>
+                <SheetTitle>{t.nav.mobile_title}</SheetTitle>
+                <SheetDescription>{t.nav.mobile_subtitle}</SheetDescription>
               </SheetHeader>
               <Separator className="my-2" />
               <nav className="flex flex-col gap-2">
