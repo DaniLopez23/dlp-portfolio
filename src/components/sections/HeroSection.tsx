@@ -32,7 +32,7 @@ export function HeroSection({ className }: HeroSectionProps) {
           {t.hero.badge}
         </p>
         <h1 className="max-w-4xl font-heading text-5xl leading-tight font-semibold tracking-tight text-foreground sm:text-6xl lg:text-7xl">
-          Daniel Lopez Perez
+          Daniel Lopez Paredes
         </h1>
         <p className="max-w-2xl text-base leading-7 text-muted-foreground sm:text-lg">
           {t.hero.tagline}

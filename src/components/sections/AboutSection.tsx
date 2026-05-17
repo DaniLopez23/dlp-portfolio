@@ -1,7 +1,7 @@
 "use client"
 
 import { useLanguage } from "@/i18n/LanguageContext"
-import { Avatar, AvatarFallback } from "@/components/ui/avatar"
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 import { Badge } from "@/components/ui/badge"
 import { SectionWrapper } from "@/components/shared/SectionWrapper"
 
@@ -31,6 +31,7 @@ export function AboutSection({ className }: AboutSectionProps) {
       <div className="grid items-start gap-10 md:grid-cols-[280px_1fr]">
         <div className="flex justify-center md:justify-start">
           <Avatar className="size-44 border-2 border-border/90 bg-muted">
+            <AvatarImage src="/foto_retrato.JPG" alt={t.about.title} />
             <AvatarFallback className="text-4xl">DP</AvatarFallback>
           </Avatar>
         </div>
